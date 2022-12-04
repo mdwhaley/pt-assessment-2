@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,25 +18,24 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
-
+const summedPrice = cart.reduce((a, c) => a + c.price, 0);
+console.log(summedPrice);
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -54,9 +52,12 @@ const cart = [
 */
 
 //CODE HERE
-
-
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+  cartTotal += cartTotal * tax;
+  cartTotal -= couponValue;
+  return cartTotal;
+};
+console.log(calcFinalPrice(summedPrice, 5, 0.06));
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -79,7 +80,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+for a pizza shop that delivers the properties in the customer object should 
+have at least the following. 
+firstName String, lastName String, address, String, city String, state String, 
+zipCode Number, phoneNumber Number, email String
 */
 
 /*
@@ -88,3 +92,16 @@ const cart = [
 */
 
 //CODE HERE
+const customer = [
+  {
+    firstName: "Mike",
+    lastName: "Whaley",
+    address: "684 Lindridge Dr",
+    city: "Galloway",
+    state: "OH",
+    zipCode: 43119,
+    phoneNumber: 6149463371,
+    email: "michael.d.whaley@gmail.com",
+  },
+];
+console.log(customer);
