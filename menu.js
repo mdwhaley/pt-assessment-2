@@ -7,7 +7,6 @@
     and filtering those arrays. 
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Create an object called `pizza` that has 6
@@ -32,7 +31,14 @@
 
 //CODE HERE
 
-
+let pizza = {
+  name: "Mike's Special",
+  price: 27.99,
+  category: "entree",
+  popularity: 1,
+  rating: 5,
+  tags: ["deep dish", "vegetarian", "tomato sauce", "specialty"],
+};
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,17 +49,15 @@
 */
 
 //CODE HERE
-
-
+console.log(pizza.popularity);
 /*
     Second, log the second tag in your pizza's
     tags array.
     Use a combination of dots and brackets to
     get the value.
 */
-
+console.log(pizza.tags[1]);
 //CODE HERE
-
 
 /*
     Third, destructure the price off of the
@@ -61,9 +65,9 @@
     
     Print the value of your new price variable.
 */
-
+let { price } = pizza;
+console.log(price);
 //CODE HERE
-
 
 /*
     Fourth, and last, destructure the category
@@ -73,8 +77,8 @@
 */
 
 //CODE HERE
-
-
+let { category } = pizza;
+console.log(category);
 //////////////////PROBLEM 3////////////////////
 /* 
     Create an array with about 5 objects in it.
@@ -88,9 +92,48 @@
 */
 
 //CODE HERE
-
-
-
+const foodArr = [
+  {
+    name: "Italian",
+    price: 17.99,
+    category: "entree",
+    popularity: 2,
+    rating: 4.75,
+    tags: ["specialty", "meat", "italian dressing"],
+  },
+  {
+    name: "The Jillian",
+    price: 15.99,
+    category: "entree",
+    popularity: 3,
+    rating: 4.6,
+    tags: ["mushroom", "vegetarian", "garlic sauce"],
+  },
+  {
+    name: "The Meghan",
+    price: 17.99,
+    category: "entree",
+    popularity: 4,
+    rating: 4.5,
+    tags: ["NY style", "meat", "tomato sauce"],
+  },
+  {
+    name: "Hawiian",
+    price: 16.99,
+    category: "entree",
+    popularity: 5,
+    rating: 4.4,
+    tags: ["meat", "Columbus Style", "tomato sauce"],
+  },
+  {
+    name: "Supreme",
+    price: 18.99,
+    category: "entree",
+    popularity: 6,
+    rating: 4.8,
+    tags: ["deep dish", "meat", "tomato sauce", "mushroom"],
+  },
+];
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -105,10 +148,36 @@
 
 //CODE HERE
 
+// const filteredFood = foodArr.filter((v) => {
+//   if (v.tags === "mushroom") {
+//     return v;
+//   }
+// });
+
+const filteredFood = foodArr.filter(checkTags);
+function checkTags(tag) {
+  for (i = 0; i < foodArr.length; i++) {
+    for (j = 0; j < foodArr[i].tags.length; j++) {
+      if (foodArr[i].tags[j] === tag) {
+        return foodArr[i];
+      }
+    }
+  }
+}
+checkTags("tags");
+//console.log(filteredFood);
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+//console.log(foodArr[1].tags);
+const filteredPrice = foodArr.filter(checkPrice);
+function checkPrice(price1) {
+  foodArr.forEach(checkPrice, price);
+  return price1 == 17.99;
+}
 
-
-
+//checkPrice(17.99);
+console.log(checkPrice(17.99));
+//console.log(filteredPrice);
+//console.log(foodArr[0].price);
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -149,7 +218,6 @@
 */
 
 //CODE HERE
-
 
 /*
     Invoke the `filterByProperty` function passing
