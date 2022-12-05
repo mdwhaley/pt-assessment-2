@@ -194,7 +194,9 @@ console.log(filteredFood);
 */
 
 //CODE HERE
-const filterByProperty = foodArr.filter((property, number, type) => element
+// const filterByProperty(property, number, type) {
+//     let result = foodArr.filter(())
+// }
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
