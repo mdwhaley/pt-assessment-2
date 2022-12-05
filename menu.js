@@ -148,36 +148,12 @@ const foodArr = [
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter((v) => {
-//   if (v.tags === "mushroom") {
-//     return v;
-//   }
-// });
-
-const filteredFood = foodArr.filter(checkTags);
-function checkTags(tag) {
-  for (i = 0; i < foodArr.length; i++) {
-    for (j = 0; j < foodArr[i].tags.length; j++) {
-      if (foodArr[i].tags[j] === tag) {
-        return foodArr[i];
-      }
-    }
-  }
-}
-checkTags("tags");
-//console.log(filteredFood);
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-//console.log(foodArr[1].tags);
-const filteredPrice = foodArr.filter(checkPrice);
-function checkPrice(price1) {
-  foodArr.forEach(checkPrice, price);
-  return price1 == 17.99;
-}
-
-//checkPrice(17.99);
-console.log(checkPrice(17.99));
-//console.log(filteredPrice);
-//console.log(foodArr[0].price);
+const filteredFood = foodArr.filter((element) =>
+  element.tags.includes("mushroom")
+);
+console.log(filteredFood);
+// const filteredPrice = foodArr.filter((element) => element.price === 17.99);
+// console.log(filteredPrice);
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -218,7 +194,7 @@ console.log(checkPrice(17.99));
 */
 
 //CODE HERE
-
+const filterByProperty = foodArr.filter((property, number, type) => element
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
