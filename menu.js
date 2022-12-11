@@ -148,10 +148,16 @@ const foodArr = [
 
 //CODE HERE
 
-const filteredFood = foodArr.filter((element) =>
-  element.tags.includes("mushroom")
+// const filteredFood = foodArr.filter((element) =>
+//   element.tags.includes("mushroom")
+// );
+// console.log(filteredFood);
+const filteredFood = foodArr.filter(
+  (element) =>
+    element.tags.includes("mushroom") && element.tags.includes("vegetarian")
 );
 console.log(filteredFood);
+
 // const filteredPrice = foodArr.filter((element) => element.price === 17.99);
 // console.log(filteredPrice);
 //////////////////PROBLEM 5////////////////////
@@ -196,15 +202,14 @@ console.log(filteredFood);
 //CODE HERE
 
 function filterByProperty(property, number, type) {
-  const filterProp = foodArr.filter(element);
-  if (property > number && type === "above") {
-    return element;
-  } else if (property < number && type === "below") {
-    return element;
-  }
+  return (filterFoodArr = foodArr.filter((element) => {
+    if (type === "above") {
+      return element[property] > number;
+    } else if (type === "below") {
+      return element[property] < number;
+    }
+  }));
 }
-
-//const test = foodArr.filter((element) => element.price > 17);
 
 /*
     Invoke the `filterByProperty` function passing
@@ -214,5 +219,4 @@ function filterByProperty(property, number, type) {
 */
 
 //CODE HERE
-filterByProperty(price, 17, "above");
-console.log(filterProp);
+console.log(filterByProperty("price", 17, "above"));
