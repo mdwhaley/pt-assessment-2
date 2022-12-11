@@ -202,13 +202,14 @@ console.log(filteredFood);
 //CODE HERE
 
 function filterByProperty(property, number, type) {
-  return (filterFoodArr = foodArr.filter((element) => {
+  const filteredFoodArr = foodArr.filter((element) => {
     if (type === "above") {
       return element[property] > number;
     } else if (type === "below") {
       return element[property] < number;
     }
-  }));
+  });
+  return filteredFoodArr;
 }
 
 /*
